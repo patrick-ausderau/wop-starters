@@ -1,0 +1,29 @@
+body {
+    font-family: Verdana;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+li {
+    box-sizing: border-box;
+    width: 30%;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: .5em;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+.resp {
+    width: 100%;
+}
