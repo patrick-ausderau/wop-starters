@@ -13,12 +13,12 @@ INSERT INTO `wop_cat` (`cat_id`, `name`, `age`, `weight`, `owner`, `filename`) V
 
 CREATE TABLE `wop_user` (
   `user_id` int(11) NOT NULL,
-  `user_name` text NOT NULL,
-  `user_email` text NOT NULL,
-  `user_password` text NOT NULL
+  `name` text NOT NULL,
+  `email` text NOT NULL,
+  `password` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-INSERT INTO `wop_user` (`user_id`, `user_name`, `user_email`, `user_password`) VALUES
+INSERT INTO `wop_user` (`user_id`, `name`, `email`, `password`) VALUES
 (1, 'John Doe', 'john@metropolia.fi', '1234'),
 (2, 'Jane Doez', 'jane@metropolia.fi', 'qwer');
 
