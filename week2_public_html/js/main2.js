@@ -58,7 +58,7 @@ const createCatCards = (cats) => {
         getCat();
       }
       catch (e) {
-        console.log(e.message());
+        console.log(e.message);
       }
     });
 
@@ -84,7 +84,7 @@ const getCat = async () => {
     createCatCards(cats);
   }
   catch (e) {
-    console.log(e.message());
+    console.log(e.message);
   }
 };
 getCat();
@@ -113,7 +113,7 @@ const getUsers = async () => {
     createUserOptions(users);
   }
   catch (e) {
-    console.log(e.message());
+    console.log(e.message);
   }
 };
 getUsers();
