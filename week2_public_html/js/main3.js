@@ -187,6 +187,8 @@ loginForm.addEventListener('submit', async (evt) => {
     alert(json.message);
   } else {
     sessionStorage.setItem('token', json.token);
+    loginWrapper.style.display = 'none';
+    logOut.style.display = 'block';
     getCat();
     getUsers();
   }
