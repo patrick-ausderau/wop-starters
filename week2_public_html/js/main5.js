@@ -33,7 +33,9 @@ const createCatCards = (cats) => {
       imageModal.alt = cat.name;
       imageModal.classList.toggle('hide');
       try {
-        addMarker([cat.coords.lon, cat.coords.lat]);
+        const coords = JSON.parse(cat.coords);
+        // console.log(coords);
+        addMarker(coords);
       }
       catch (e) {
       }
