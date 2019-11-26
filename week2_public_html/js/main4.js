@@ -3,6 +3,7 @@ const url = 'http://localhost:3000'; // change url when uploading to server
 
 // select existing html elements
 const loginWrapper = document.querySelector('#login-wrapper');
+const userInfo = document.querySelector('#user-info');
 const logOut = document.querySelector('#log-out');
 const main = document.querySelector('main');
 const loginForm = document.querySelector('#login-form');
@@ -64,7 +65,8 @@ const createCatCards = (cats) => {
         const json = await response.json();
         console.log('delete response', json);
         getCat();
-      } catch (e) {
+      }
+      catch (e) {
         console.log(e.message());
       }
     });
@@ -96,7 +98,8 @@ const getCat = async () => {
     const response = await fetch(url + '/cat', options);
     const cats = await response.json();
     createCatCards(cats);
-  } catch (e) {
+  }
+  catch (e) {
     console.log(e.message);
   }
 };
@@ -128,7 +131,8 @@ const getUsers = async () => {
     const response = await fetch(url + '/user', options);
     const users = await response.json();
     createUserOptions(users);
-  } catch (e) {
+  }
+  catch (e) {
     console.log(e.message);
   }
 };
@@ -194,6 +198,7 @@ loginForm.addEventListener('submit', async (evt) => {
     loginWrapper.style.display = 'none';
     logOut.style.display = 'block';
     main.style.display = 'block';
+    userInfo.innerHTML = `Hello ${json.user.name}`;
     getCat();
     getUsers();
   }
@@ -218,7 +223,8 @@ logOut.addEventListener('click', async (evt) => {
     loginWrapper.style.display = 'flex';
     logOut.style.display = 'none';
     main.style.display = 'none';
-  } catch (e) {
+  }
+  catch (e) {
     console.log(e.message);
   }
 });
