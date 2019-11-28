@@ -99,3 +99,11 @@ button{
   text-shadow: #000;
   font-size: 2em;
 }
+
+#map {
+  position: absolute;
+  bottom: 5vh;
+  right: 5vw;
+  width: 30vw;
+  height: 30vh;
+}
