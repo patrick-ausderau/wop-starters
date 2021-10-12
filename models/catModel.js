@@ -3,7 +3,7 @@ const cats = [
   {
     id: '1',
     name: 'Frank',
-    age: '6',
+    birthdate: '2010-10-30',
     weight: '5',
     owner: '1',
     filename: 'http://placekitten.com/400/300',
@@ -11,7 +11,7 @@ const cats = [
   {
     id: '2',
     name: 'James',
-    age: '4',
+    birthdate: '2015-12-25',
     weight: '11',
     owner: '2',
     filename: 'http://placekitten.com/400/302',
