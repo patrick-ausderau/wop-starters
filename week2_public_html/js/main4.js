@@ -30,7 +30,7 @@ const createCatCards = (cats) => {
     h2.innerHTML = cat.name;
 
     const p1 = document.createElement('p');
-    p1.innerHTML = `Age: ${cat.age}`;
+    p1.innerHTML = `Birthdate: ${cat.birthdate}`;
 
     const p2 = document.createElement('p');
     p2.innerHTML = `Weight: ${cat.weight}kg`;
@@ -44,7 +44,7 @@ const createCatCards = (cats) => {
     modButton.addEventListener('click', () => {
       const inputs = modForm.querySelectorAll('input');
       inputs[0].value = cat.name;
-      inputs[1].value = cat.age;
+      inputs[1].value = cat.birthdate;
       inputs[2].value = cat.weight;
       inputs[3].value = cat.cat_id;
       modForm.querySelector('select').value = cat.owner;
@@ -57,7 +57,7 @@ const createCatCards = (cats) => {
       const fetchOptions = {
         method: 'DELETE',
         headers: {
-          'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+          Authorization: 'Bearer ' + sessionStorage.getItem('token'),
         },
       };
       try {
@@ -65,8 +65,7 @@ const createCatCards = (cats) => {
         const json = await response.json();
         console.log('delete response', json);
         getCat();
-      }
-      catch (e) {
+      } catch (e) {
         console.log(e.message());
       }
     });
@@ -92,14 +91,13 @@ const getCat = async () => {
   try {
     const options = {
       headers: {
-        'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+        Authorization: 'Bearer ' + sessionStorage.getItem('token'),
       },
     };
     const response = await fetch(url + '/cat', options);
     const cats = await response.json();
     createCatCards(cats);
-  }
-  catch (e) {
+  } catch (e) {
     console.log(e.message);
   }
 };
@@ -125,14 +123,13 @@ const getUsers = async () => {
   try {
     const options = {
       headers: {
-        'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+        Authorization: 'Bearer ' + sessionStorage.getItem('token'),
       },
     };
     const response = await fetch(url + '/user', options);
     const users = await response.json();
     createUserOptions(users);
-  }
-  catch (e) {
+  } catch (e) {
     console.log(e.message);
   }
 };
@@ -144,7 +141,7 @@ addForm.addEventListener('submit', async (evt) => {
   const fetchOptions = {
     method: 'POST',
     headers: {
-      'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+      Authorization: 'Bearer ' + sessionStorage.getItem('token'),
     },
     body: fd,
   };
@@ -162,7 +159,7 @@ modForm.addEventListener('submit', async (evt) => {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+      Authorization: 'Bearer ' + sessionStorage.getItem('token'),
     },
     body: JSON.stringify(data),
   };
@@ -210,7 +207,7 @@ logOut.addEventListener('click', async (evt) => {
   try {
     const options = {
       headers: {
-        'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+        Authorization: 'Bearer ' + sessionStorage.getItem('token'),
       },
     };
     const response = await fetch(url + '/auth/logout', options);
@@ -223,8 +220,7 @@ logOut.addEventListener('click', async (evt) => {
     loginWrapper.style.display = 'flex';
     logOut.style.display = 'none';
     main.style.display = 'none';
-  }
-  catch (e) {
+  } catch (e) {
     console.log(e.message);
   }
 });

@@ -14,7 +14,7 @@ const getCat = async () => {
         <figure>
             <img src="${cat.filename}" class="resp">
         </figure>
-        <p>Age: ${cat.age}</p>
+        <p>Age: ${cat.birthdate}</p>
         <p>Weight: ${cat.weight}kg</p>
         <p>Owner: ${user.name}</p>
     </li>

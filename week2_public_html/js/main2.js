@@ -24,7 +24,7 @@ const createCatCards = (cats) => {
     h2.innerHTML = cat.name;
 
     const p1 = document.createElement('p');
-    p1.innerHTML = `Age: ${cat.age}`;
+    p1.innerHTML = `Birthdate: ${cat.birthdate}`;
 
     const p2 = document.createElement('p');
     p2.innerHTML = `Weight: ${cat.weight}kg`;
@@ -38,7 +38,7 @@ const createCatCards = (cats) => {
     modButton.addEventListener('click', () => {
       const inputs = modForm.querySelectorAll('input');
       inputs[0].value = cat.name;
-      inputs[1].value = cat.age;
+      inputs[1].value = cat.birthdate;
       inputs[2].value = cat.weight;
       inputs[3].value = cat.cat_id;
       modForm.querySelector('select').value = cat.owner;
@@ -56,8 +56,7 @@ const createCatCards = (cats) => {
         const json = await response.json();
         console.log('delete response', json);
         getCat();
-      }
-      catch (e) {
+      } catch (e) {
         console.log(e.message);
       }
     });
@@ -82,8 +81,7 @@ const getCat = async () => {
     const response = await fetch(url + '/cat');
     const cats = await response.json();
     createCatCards(cats);
-  }
-  catch (e) {
+  } catch (e) {
     console.log(e.message);
   }
 };
@@ -111,8 +109,7 @@ const getUsers = async () => {
     const response = await fetch(url + '/user');
     const users = await response.json();
     createUserOptions(users);
-  }
-  catch (e) {
+  } catch (e) {
     console.log(e.message);
   }
 };
