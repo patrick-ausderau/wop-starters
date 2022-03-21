@@ -40,4 +40,3 @@ ALTER TABLE `wop_user`
 
 ALTER TABLE `wop_cat`
   ADD CONSTRAINT `wop_cat_ibfk_1` FOREIGN KEY (`owner`) REFERENCES `wop_user` (`user_id`) ON DELETE CASCADE;
-COMMIT;
